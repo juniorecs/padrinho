@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brincadeira</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-image: url('https://midiasjuniorecs.b-cdn.net/Imagem%20do%20WhatsApp%20de%202024-09-05%20%C3%A0(s)%2000.10.54_21ddc6e8.jpg'); /* Coloque uma imagem discreta de casamento */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #000;
+        }
+
+        h1 {
+            color: #000; /* Cor da pergunta em preto */
+            text-shadow: none;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #000; /* Cor de fundo preta */
+            border: none;
+            color: #fff; /* Texto em branco */
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #333; /* Cor um pouco mais clara ao passar o mouse */
+        }
+
+        #no {
+            position: relative;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            body {
+                margin-top: 50px;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Você foi padrinho?</h1>
+
+    <button class="button" id="yes">Sim</button>
+    <button class="button" id="no">Não</button>
+
+    <script>
+        const noButton = document.getElementById('no');
+
+        // Adiciona movimento no desktop (mouseover)
+        noButton.addEventListener('mouseover', () => {
+            moverBotao();
+        });
+
+        // Adiciona movimento no celular (touch)
+        noButton.addEventListener('touchstart', () => {
+            moverBotao();
+        });
+
+        function moverBotao() {
+            const x = Math.random() * window.innerWidth * 0.6;
+            const y = Math.random() * window.innerHeight * 0.6;
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+
+        document.getElementById('yes').addEventListener('click', () => {
+            alert('Não, você foi amigo do noivo! 😂');
+        });
+    </script>
+
+</body>
+</html>
